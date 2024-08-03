@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """basic babel setup in our simple flask app"""
 
-from flask import Flask, rebder_template, request
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
@@ -27,7 +27,7 @@ def get_locale():
 @app.route('/')
 def index():
     """default route"""
-    return render_template('3-index.html')
+    return render_template('0-index.html')
 
 
 if __name__ == '__main__':
