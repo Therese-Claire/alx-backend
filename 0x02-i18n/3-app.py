@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""basic babel setup in our simple flask app"""
-
+"""sets up a simple flask app"""
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
 class Config:
-    """language config for our app"""
-    LANGUAGES = ["en", "fr"]
+    """config for simple flask app"""
+    LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
@@ -21,13 +20,13 @@ babel = Babel(app)
 @babel.localeselector
 def get_locale():
     """determines the best match with our supported languages"""
-    return request.accept_languages.est_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/')
 def index():
-    """default route"""
-    return render_template('0-index.html')
+    """index route"""
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
